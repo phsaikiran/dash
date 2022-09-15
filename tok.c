@@ -44,7 +44,7 @@ main(int argc, char *argv[])
 		// Each sentence consists of several tokens separated by ' ' (space).
 		// Using strtok_r() find the number of sentences and the number of tokens
 		// in each sentence. HINT: man strtok and look at the sample program at the end.
-		while((sentence = strtok_r(ref, ".?", &ref))){
+		while((sentence = strtok_r(ref, ".?&", &ref))){
 			printf("Sentence: %s\n", sentence);
 
 			char* ref_t = sentence;

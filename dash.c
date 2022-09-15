@@ -1,3 +1,5 @@
+/* Main file for dash shell */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -8,11 +10,25 @@ char* user_command; //to store user command
 int
 main(int argc, char *argv[])
 {
-    if (argc == 0){//Interactive Mode
+    //Defining the buffer
+    char* buffer;
+    size_t bufsize = 1024;
+    size_t inputlen;
+
+    buffer = (char *)malloc(bufsize * sizeof(char)); //Allocating memory for buffer
+
+    //Interactive Mode
+    if (argc == 0){
         //get command from user
+        while(1){
+		    printf("dash>");
+		    inputlen = getline(&buffer, &bufsize, stdin);
+            readUserCommand(buffer);
+        }
         //parse input
     }
-    else if(argc == 1){//Batch Mode
+    //Batch Mode
+    else if(argc == 1){
         f_batch = fopen(argv[0], "r"); //Open batch file in read mode
 
         if(f_batch == NULL){
