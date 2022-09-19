@@ -9,14 +9,14 @@
 #include <unistd.h>
 
 
-/*
+/* read_command
 1. Calls get_tokens() and stores list of command and arguments in tokens
 2. Check if command(tokens[0]) is built-in or not
-
 */
 int read_command(char *input) {
-    char *tokens[MAX_TOKENS];
-    int num_tokens = get_tokens(input," ", tokens);
+    char*   tokens[MAX_TOKENS];
+    int     num_tokens = get_tokens(input," ", tokens);
+    char*   execpath;
 
     if(strcmp(tokens[0], "cd") == 0 || strcmp(tokens[0], "exit") == 0 || strcmp(tokens[0], "path") == 0){
         
@@ -24,14 +24,22 @@ int read_command(char *input) {
         if(strcmp(tokens[0], "exit") == 0){
             return -1;
         }
+        else if(strcmp(tokens[0], "cd") == 0){
+            //do something
+        }
+        else if(strcmp(tokens[0], "path") == 0){
+            //do something
+        }
     }
     else{
         printf("Not a Built-in command\n");
+        int cmdexist = get_path(execpath);
+
 
         int rc = fork();
         if (rc == 0) { // child:
         printf("I am child\n");
-        execv(tokens[0], tokens); // runs command
+        execv("/bin/mkdir", tokens); // runs command
         } 
         else { 
             // parent goes down this path (main)
@@ -40,15 +48,13 @@ int read_command(char *input) {
 
         }
     }
-
-
     
     return 1;
 }
 
-/*
- * Uses strtok_r and extracts tokens from a string sing given delimiter
- * Returns List of tokens
+/* get_tokens
+ 1. Uses strtok_r and extracts tokens from a string sing given delimiter
+ 2. Returns List of tokens
  */
 int get_tokens(char *str, char *delim, char *tokens[]) {
     char *ref = str;
@@ -80,3 +86,15 @@ int get_tokens(char *str, char *delim, char *tokens[]) {
     return num_tokens;
 }
 
+/* get_path
+ Returns string with correct path
+
+    eg: for command ls, will return "/bin/ls" 
+*/
+
+int get_path(char* command){
+
+
+    return 1;
+
+}

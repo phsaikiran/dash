@@ -1,4 +1,4 @@
-# 5348-project-1
+# dash
 Two Modes:
 1. Interactive
 Prompt - "dash> "
