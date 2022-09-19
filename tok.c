@@ -3,7 +3,7 @@
 #include <string.h>
 #include "parsecommand.h"
 
-int main(int argc, char *argv[]) {
+int main1(int argc, char *argv[]) {
 
     // define the required variables
     char *buffer;
