@@ -26,6 +26,7 @@ int read_command(char *input) {
         }
         else if(strcmp(tokens[0], "cd") == 0){
             //do something
+            //exec_cd()
         }
         else if(strcmp(tokens[0], "path") == 0){
             //do something
