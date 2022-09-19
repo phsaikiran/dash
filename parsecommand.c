@@ -16,7 +16,7 @@
 int read_command(char *input) {
     char*   tokens[MAX_TOKENS];
     int     num_tokens = get_tokens(input," ", tokens);
-    char*   execpath;
+    char*   execpath[MAX_TOKEN_LENGTH];
 
     if(strcmp(tokens[0], "cd") == 0 || strcmp(tokens[0], "exit") == 0 || strcmp(tokens[0], "path") == 0){
         
@@ -29,17 +29,20 @@ int read_command(char *input) {
         }
         else if(strcmp(tokens[0], "path") == 0){
             //do something
+            //exec_path();
         }
     }
     else{
         printf("Not a Built-in command\n");
-        int cmdexist = get_path(execpath);
 
+        strcpy(execpath, tokens[0]);
+        int cmdexist = get_path(execpath);
+        printf("%s \n", execpath);
 
         int rc = fork();
-        if (rc == 0) { // child:
+        if(rc == 0) { // child:
         printf("I am child\n");
-        execv("/bin/mkdir", tokens); // runs command
+        execv(execpath, tokens); // runs command
         } 
         else { 
             // parent goes down this path (main)
@@ -94,7 +97,12 @@ int get_tokens(char *str, char *delim, char *tokens[]) {
 
 int get_path(char* command){
 
+    char* path = strdup("/bin/");
 
+    strcat(path, command);
+    //printf("%s", path);
+    strcpy(command, path);
+    
     return 1;
 
 }
