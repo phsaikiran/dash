@@ -10,6 +10,7 @@ compile_commands.json
 CTestTestfile.cmake
 _deps
 .idea
+.vscode
 cmake-build-debug
-5348_project_1
+dash
 .DS_Store
