@@ -23,13 +23,12 @@ int main(int argc, char *argv[]) {
             printf("dash> ");
             inputlen = getline(&buffer, &bufsize, stdin);
             int buffer_length = strlen(buffer);
-            if(buffer[buffer_length - 1] == '\n'){
+            if (buffer[buffer_length - 1] == '\n') {
                 buffer[buffer_length - 1] = '\0';
             }
             int ret = read_command(buffer); //parse user input
 
-            if(ret == -1) break;
-
+            if (ret == -1) break;
         }
         //parse input
     }
@@ -49,6 +48,4 @@ int main(int argc, char *argv[]) {
     } else {
         //Error Processing
     }
-
-
 }
