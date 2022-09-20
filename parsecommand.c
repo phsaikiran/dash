@@ -22,7 +22,7 @@ int exec_single_command(char *input) {
     char execpath[MAX_TOKEN_LENGTH];
 
     if (strcmp(tokens[0], "cd") == 0 || strcmp(tokens[0], "exit") == 0 || strcmp(tokens[0], "path") == 0) {
-        printf("Built-in command\n");
+        //printf("Built-in command\n");
         if (strcmp(tokens[0], "exit") == 0) {
             return -1;
         } else if (strcmp(tokens[0], "cd") == 0) {
@@ -32,8 +32,7 @@ int exec_single_command(char *input) {
             return exec_path(tokens, num_tokens);
         }
     } else {
-        printf("Not a Built-in command\n");
-
+        //printf("Not a Built-in command\n");
         strcpy(execpath, tokens[0]);
         int cmdexist = get_path(execpath);
         printf("%s \n", execpath);
@@ -57,24 +56,22 @@ int exec_single_command(char *input) {
 int exec_parallel_commands(char *input) {
     // TODO: Check for max parallel commands length
     char *commands[MAX_PARALLEL_COMMANDS];
-    int num_tokens = get_tokens(input, "&", commands);
-    pid_t pids[MAX_PARALLEL_COMMANDS];
-    for (int i = 0; i < num_tokens; i++) {
+    int num_commands = get_tokens(input, "&", commands);
+    for (int i = 0; i < num_commands; i++) {
         // TODO: ALl forks check for error
-        if ((pids[i] = fork()) < 0) {
-            perror("fork");
-            abort();
-        } else if (pids[i] == 0) {
+        int rc = fork();
+        if (rc < 0) {
+            //TODO: Handle error
+        } else if (rc == 0) {
             exec_single_command(commands[i]);
             exit(0);
         }
     }
 
-    /* Wait for children to exit. */
-    int status;
-    while (num_tokens > 0) {
-        wait(&status);
-        --num_tokens;
+    // Wait for all children to exit
+    while (num_commands > 0) {
+        wait(NULL);
+        --num_commands;
     }
     return 1;
 }
