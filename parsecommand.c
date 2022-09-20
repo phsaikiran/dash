@@ -13,7 +13,7 @@
  * 1. Calls get_tokens() and stores list of command and arguments in tokens
  * 2. Check if command(tokens[0]) is built-in or not
  */
-int read_command(char *input) {
+int exec_single_command(char *input) {
     char *tokens[MAX_TOKENS];
     int num_tokens = get_tokens(input, " ", tokens);
     char execpath[MAX_TOKEN_LENGTH];
@@ -37,7 +37,9 @@ int read_command(char *input) {
         printf("%s \n", execpath);
 
         int rc = fork();
-        if (rc == 0) { // child:
+        if (rc < 0) {
+            //TODO: Handle error
+        } else if (rc == 0) { // child:
             printf("I am child\n");
             execv(execpath, tokens); // runs command
         } else {
@@ -48,6 +50,31 @@ int read_command(char *input) {
         }
     }
 
+    return 1;
+}
+
+int exec_parallel_commands(char *input) {
+    // TODO: Check for max parallel commands length
+    char *commands[MAX_PARALLEL_COMMANDS];
+    int num_tokens = get_tokens(input, "&", commands);
+    pid_t pids[MAX_PARALLEL_COMMANDS];
+    for (int i = 0; i < num_tokens; i++) {
+        // TODO: ALl forks check for error
+        if ((pids[i] = fork()) < 0) {
+            perror("fork");
+            abort();
+        } else if (pids[i] == 0) {
+            exec_single_command(commands[i]);
+            exit(0);
+        }
+    }
+
+    /* Wait for children to exit. */
+    int status;
+    while (num_tokens > 0) {
+        wait(&status);
+        --num_tokens;
+    }
     return 1;
 }
 
