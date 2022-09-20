@@ -1,7 +1,8 @@
 #ifndef BUILTINCMD_H
 #define BUILTINCMD_H
 
-void exec_path(void);
+#define MAX_PATHS 100
 
+int exec_path(char *tokens[], int num_tokens);
 
 #endif

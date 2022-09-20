@@ -4,7 +4,6 @@
 #define MAX_TOKENS 20
 #define MAX_PARALLEL_COMMANDS 10
 #define MAX_TOKEN_LENGTH 100
-#define MAX_PATHS 100
 
 int get_tokens(char *str, char *delim, char *tokens[]);
 

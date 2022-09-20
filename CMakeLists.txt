@@ -9,4 +9,6 @@ add_executable(dash
         dash.c
         parsecommand.c
         parsecommand.h
-)
+        builtincmd.c
+        builtincmd.h
+        )
