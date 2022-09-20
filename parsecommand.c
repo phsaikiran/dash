@@ -5,8 +5,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "parsecommand.h"
 #include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include "parsecommand.h"
+
+char *PATHS[MAX_PATHS] = {"/bin"};
+int PATH_LENGTH = 1;
+
+int exec_path(char *tokens[], int num_tokens) {
+    //TODO: Error checking for not a happy path
+    if (num_tokens == 2) {
+        PATHS[PATH_LENGTH] = strdup(tokens[1]);
+        PATH_LENGTH += 1;
+    } else {
+        //TODO Error handling
+    }
+    return 1;
+}
 
 /*
  * read_command
@@ -26,8 +42,7 @@ int exec_single_command(char *input) {
             //do something
             //exec_cd()
         } else if (strcmp(tokens[0], "path") == 0) {
-            //do something
-            //exec_path();
+            return exec_path(tokens, num_tokens);
         }
     } else {
         printf("Not a Built-in command\n");
@@ -46,7 +61,6 @@ int exec_single_command(char *input) {
             // parent goes down this path (main)
             wait(NULL);
             printf("I am parent\n");
-
         }
     }
 
