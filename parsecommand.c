@@ -24,7 +24,8 @@ int exec_single_command(char *input) {
         // Build in command
         if (strcmp(tokens[0], "exit") == 0) {
             return -1;
-        } else if (strcmp(tokens[0], "cd") == 0) {
+        } 
+        else if (strcmp(tokens[0], "cd") == 0) {
             //if cd has no arguments - return error
             //if cd has more than 1 argument - return error
             int cdret = exec_chdir(tokens[1]);
@@ -34,10 +35,12 @@ int exec_single_command(char *input) {
                 write_error();
                 return 0;
             }
-        } else if (strcmp(tokens[0], "path") == 0) {
+        } 
+        else if (strcmp(tokens[0], "path") == 0) {
             return exec_path(tokens, num_tokens);
         }
-    } else {
+    } 
+    else {
         // Not a build in command
         char exec_path[MAX_TOKEN_LENGTH];
         strcpy(exec_path, tokens[0]);
@@ -72,7 +75,8 @@ int exec_parallel_commands(char *input) {
         if (rc < 0) {
             write_error();
             return 0;
-        } else if (rc == 0) {
+        } 
+        else if (rc == 0) {
             exec_single_command(commands[i]);
             exit(0);
         }
