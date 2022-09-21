@@ -19,7 +19,6 @@
 int exec_single_command(char *input) {
     char *tokens[MAX_TOKENS];
     int num_tokens = get_tokens(input, " ", tokens);
-    char execpath[MAX_TOKEN_LENGTH];
 
     if (strcmp(tokens[0], "cd") == 0 || strcmp(tokens[0], "exit") == 0 || strcmp(tokens[0], "path") == 0) {
         //printf("Built-in command\n");
@@ -41,19 +40,18 @@ int exec_single_command(char *input) {
         }
     } else {
         //printf("Not a Built-in command\n");
-        strcpy(execpath, tokens[0]);
-        int cmdexist = get_path(execpath);
-        //printf("%s \n", execpath);
+        char exec_path[MAX_TOKEN_LENGTH];
+        strcpy(exec_path, tokens[0]);
+        int cmdexist = get_path(exec_path);
+        printf("exec_path: %s\n", exec_path);
 
         int rc = fork();
         if (rc < 0) {
             //TODO: Handle error
-        } 
-        else if (rc == 0) { // child:
-            //printf("I am child\n");
-            execv(execpath, tokens); // runs command
-        } 
-        else {
+        } else if (rc == 0) { // child:
+            printf("I am child\n");
+            execv(exec_path, tokens); // runs command
+        } else {
             // parent goes down this path (main)
             wait(NULL);
             //printf("I am parent\n");
@@ -116,13 +114,15 @@ int get_tokens(char *str, char *delim, char *tokens[]) {
  * eg: for command ls, will return "/bin/ls"
  */
 int get_path(char *command) {
-    char *path = strdup("/bin/");
-
-    strcat(path, command);
-    //printf("%s", path);
-    strcpy(command, path);
-
-    return 1;
+    for (int i = 0; i < PATH_LENGTH; i++) {
+        char *path = strdup(PATHS[i]);
+        strcat(path, command);
+        if (access(path, X_OK)) {
+            strcpy(command, path);
+            return i;
+        }
+    }
+    return -1;
 }
 
 /* Error Processing */
