@@ -1,12 +1,21 @@
-# dash
-Two Modes:
-1. Interactive
-Prompt - "dash> "
-Type a command (ls)
+# Dash Requirements
+
+* Dash Shell has two Modes:
+	1. Interactive
+		Prompt - "dash> "
+		It allows the user to type commands directly.
 
 
-2. Batch
-prompt> ./dash batch.txt
+	2. Batch
+		prompt: > ./dash batch.txt
+		Reads input from a batch file and executes commands from therein.
+		
+* Dash shell creates a new process for every command, except the built-in commands - cd, exit and path - which are implemented internally.
+* Shell should support standard output redirection:
+	ls -la /tmp > output
+		-Here the standard output of ls program should be redirected to the file output. The standard error should also be rerouted to the file 		output.
+		-If output file exists before running the program, overwrite it.
+		
 
 
 - parse the input
