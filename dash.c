@@ -4,14 +4,18 @@
 #include <stdlib.h>
 #include <string.h>
 #include "parsecommand.h"
+#include "dash.h"
 
 int main(int argc, char *argv[]) {
+    
     //Interactive Mode
     if (argc == 1) {
+        
         //Defining the buffer
         size_t bufsize = 1024;
         char *buffer = (char *) malloc(bufsize * sizeof(char)); //Allocating memory for buffer
         size_t inputlen;
+       
         //get command from user
         while (1) {
             printf("dash> ");
@@ -21,8 +25,17 @@ int main(int argc, char *argv[]) {
             if (buffer[buffer_length - 1] == '\n') {
                 buffer[buffer_length - 1] = '\0';
             }
+            
+            //Parse User Command
+            int pret = parse_command(buffer);
+            printf("pret %d",pret);
+            if(pret == -1){
+                printf("exxit break\n");
+                break;
+            }
 
-            int is_parallel_commands = 0;
+            
+           /* int is_parallel_commands = 0;
             // Check for '&' in the buffer for parallel commands
             for (int i = 0; buffer[i] != '\0'; i++) {
                 if (buffer[i] == '&') {
@@ -37,21 +50,76 @@ int main(int argc, char *argv[]) {
             } else {
                 int ret = exec_parallel_commands(buffer); //parse user input
                 if (ret == -1) break;
-            }
+            }*/
         }
-    } else if (argc == 2) {//Batch Mode
-        FILE *f_batch;      //To read from batch file
-        f_batch = fopen(argv[0], "r"); //Open batch file in read mode
+    }
+    //Batch Mode
+    else if (argc == 2) {
+        FILE *fb;
+        ssize_t read;
+        size_t len;
+        char line[MAX_LINE_LENGTH];
 
-        if (f_batch == NULL) {
+        printf("%s", argv[1]);
+
+        fb = fopen(argv[1], "r"); //Open batch file in read mode
+
+        if (fb == NULL) {
             //Error Processing
+            write_error();
         }
 
-        //Till End of File
-        //Read from file line by line
+        //Till End of File, Read line by line
+        while(fgets(line, MAX_LINE_LENGTH, fb) != NULL){
+            printf("%s\n", line);
+
+
+        }
+
         //Parse the Line
         //Execute Command
-    } else {
-        //TODO: Error Processing
+
+    } 
+    else {
+        //Error Processing
+        write_error();
     }
+    printf("Exiting..");
+    exit(0);
+}
+
+/*
+    Parses User Command
+    1. Calls exec_single_command() if user entered only 1 command
+    2. Calls exec_parallel_commands() if user entered parallel commands
+    3. Returns -1 if exit is encountered, returns 0 otherwise.
+
+*/
+int parse_command(char* command){
+
+    int is_parallel_commands = 0;
+    int ret = 0;
+
+    // Check for '&' in the buffer for parallel commands
+    for(int i = 0; command[i] != '\0'; i++){
+        if (command[i] == '&') {
+            is_parallel_commands = 1;
+            break;
+        }
+    }
+    printf("isparallelcmd = %d\n",is_parallel_commands);
+
+    if(is_parallel_commands == 0){
+        int ret = exec_single_command(command); //parse user input
+        if(ret == -1){
+            printf("exit hbhbh-1\n");
+        }
+    } 
+    else{
+        int ret = exec_parallel_commands(command); //parse user input
+        printf("exit -1\n");
+    }
+
+    return ret;
+    
 }
