@@ -25,10 +25,18 @@ int exec_single_command(char *input) {
         //printf("Built-in command\n");
         if (strcmp(tokens[0], "exit") == 0) {
             return -1;
-        } else if (strcmp(tokens[0], "cd") == 0) {
-            //do something
-            //exec_cd()
-        } else if (strcmp(tokens[0], "path") == 0) {
+        } 
+        else if (strcmp(tokens[0], "cd") == 0) {
+            //if cd has no arguments - return error
+            //if cd has more than 1 argument - return error
+            int cdret = exec_chdir(tokens[1]);
+
+            if(cdret == -1){
+                //error processing
+                printf("cd error\n");
+            }
+        } 
+        else if (strcmp(tokens[0], "path") == 0) {
             return exec_path(tokens, num_tokens);
         }
     } else {
@@ -40,10 +48,12 @@ int exec_single_command(char *input) {
         int rc = fork();
         if (rc < 0) {
             //TODO: Handle error
-        } else if (rc == 0) { // child:
+        } 
+        else if (rc == 0) { // child:
             printf("I am child\n");
             execv(execpath, tokens); // runs command
-        } else {
+        } 
+        else {
             // parent goes down this path (main)
             wait(NULL);
             printf("I am parent\n");
