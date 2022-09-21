@@ -14,10 +14,10 @@
 
 * Shell should support standard output redirection:
 	ls -la /tmp > output
-		* Here the standard output of ls program should be redirected to the file output. The standard error should also be rerouted to the file 		output.
-		* If output file exists before running the program, overwrite it.
-		* The exact format of redirection is a command (and possibly some arguments) followed by the redirection symbol followed by a filename. 		* Multiple redirection operators or multiple files to the right of the redirection sign are errors.
-		
+	
+		- Here the standard output of ls program should be redirected to the file output. The standard error should also be rerouted to the file output.
+		- If output file exists before running the program, overwrite it.
+		- The exact format of redirection is a command (and possibly some arguments) followed by the redirection symbol followed by a filename. 		- Multiple redirection operators or multiple files to the right of the redirection sign are errors.
 		- After extracting each command, we need to look for ">"
 
 * User can launch parallel Commands - &	
