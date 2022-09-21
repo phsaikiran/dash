@@ -32,23 +32,6 @@ int main(int argc, char *argv[]) {
                 break;
             }
 
-            
-           /* int is_parallel_commands = 0;
-            // Check for '&' in the buffer for parallel commands
-            for (int i = 0; buffer[i] != '\0'; i++) {
-                if (buffer[i] == '&') {
-                    is_parallel_commands = 1;
-                    break;
-                }
-            }
-
-            if (is_parallel_commands == 0) {
-                int ret = exec_single_command(buffer); //parse user input
-                if (ret == -1) break;
-            } else {
-                int ret = exec_parallel_commands(buffer); //parse user input
-                if (ret == -1) break;
-            }*/
         }
     }
     //Batch Mode
@@ -58,7 +41,7 @@ int main(int argc, char *argv[]) {
         size_t len;
         char line[MAX_LINE_LENGTH];
 
-        printf("%s", argv[1]);
+        //printf("%s", argv[1]);
 
         fb = fopen(argv[1], "r"); //Open batch file in read mode
 
@@ -69,14 +52,17 @@ int main(int argc, char *argv[]) {
 
         //Till End of File, Read line by line
         while(fgets(line, MAX_LINE_LENGTH, fb) != NULL){
-            printf("%s\n", line);
+            int line_len = strlen(line);
 
+            if (line[line_len - 1] == '\n') {
+                line[line_len - 1] = '\0';
+            }
 
+            int pret = parse_command(line);
+            if(pret == -1){
+                break;
+            }
         }
-
-        //Parse the Line
-        //Execute Command
-
     } 
     else {
         //Error Processing

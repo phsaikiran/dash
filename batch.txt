@@ -1,4 +1,4 @@
-mkdir batchtest
-ls 
-ls & ls -al & mkdir mybatch
+mkdir batchtest1
+ls
+ls & ls -al & mkdir mybatch2
 exit
