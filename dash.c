@@ -28,9 +28,7 @@ int main(int argc, char *argv[]) {
             
             //Parse User Command
             int pret = parse_command(buffer);
-            printf("pret %d",pret);
             if(pret == -1){
-                printf("exxit break\n");
                 break;
             }
 
@@ -84,7 +82,7 @@ int main(int argc, char *argv[]) {
         //Error Processing
         write_error();
     }
-    printf("Exiting..");
+
     exit(0);
 }
 
@@ -107,17 +105,12 @@ int parse_command(char* command){
             break;
         }
     }
-    printf("isparallelcmd = %d\n",is_parallel_commands);
 
     if(is_parallel_commands == 0){
-        int ret = exec_single_command(command); //parse user input
-        if(ret == -1){
-            printf("exit hbhbh-1\n");
-        }
+        ret = exec_single_command(command); //parse user input
     } 
     else{
-        int ret = exec_parallel_commands(command); //parse user input
-        printf("exit -1\n");
+        ret = exec_parallel_commands(command); //parse user input
     }
 
     return ret;
