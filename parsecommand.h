@@ -13,4 +13,6 @@ int exec_parallel_commands(char *input);
 
 int get_path(char *command);
 
+void write_error(void);
+
 #endif //PARSECOMMAND_H

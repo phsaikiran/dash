@@ -33,7 +33,7 @@ int exec_single_command(char *input) {
 
             if(cdret == -1){
                 //error processing
-                printf("cd error\n");
+                write_error();
             }
         } 
         else if (strcmp(tokens[0], "path") == 0) {
@@ -43,20 +43,20 @@ int exec_single_command(char *input) {
         //printf("Not a Built-in command\n");
         strcpy(execpath, tokens[0]);
         int cmdexist = get_path(execpath);
-        printf("%s \n", execpath);
+        //printf("%s \n", execpath);
 
         int rc = fork();
         if (rc < 0) {
             //TODO: Handle error
         } 
         else if (rc == 0) { // child:
-            printf("I am child\n");
+            //printf("I am child\n");
             execv(execpath, tokens); // runs command
         } 
         else {
             // parent goes down this path (main)
             wait(NULL);
-            printf("I am parent\n");
+            //printf("I am parent\n");
         }
     }
 
@@ -123,4 +123,12 @@ int get_path(char *command) {
     strcpy(command, path);
 
     return 1;
+}
+
+/* Error Processing */
+
+void write_error(void){
+    char error_message[30] = "An error has occurred\n";
+    write(STDERR_FILENO, error_message, strlen(error_message));
+
 }
