@@ -8,6 +8,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <fcntl.h>
 #include "parsecommand.h"
 #include "builtincmd.h"
 
@@ -17,6 +18,28 @@
  * 2. Check if command(tokens[0]) is built-in or not
  */
 int exec_single_command(char *input) {
+    char *reds[MAX_TOKENS];
+    int num_red_tokens = get_tokens(input, ">", reds);
+    char *redirection_file;
+    if (num_red_tokens == 1) {
+        // No redirection, do nothing
+    } else if (num_red_tokens == 2) {
+        // Redirection is present
+        char *redirection_file_tokens[MAX_TOKENS];
+        int num_redirection_files = get_tokens(reds[1], " ", redirection_file_tokens);
+        if (num_redirection_files != 1) {
+            // Multiple redirection files in an error
+            write_error();
+            return 0;
+        }
+        strcpy(input, reds[0]);
+        redirection_file = strdup(redirection_file_tokens[0]);
+    } else {
+        // Multiple redirections is an error
+        write_error();
+        return 0;
+    }
+
     char *tokens[MAX_TOKENS];
     int num_tokens = get_tokens(input, " ", tokens);
 
@@ -24,7 +47,7 @@ int exec_single_command(char *input) {
         // Build in command
         if (strcmp(tokens[0], "exit") == 0) {
             return -1;
-        } 
+        }
         else if (strcmp(tokens[0], "cd") == 0) {
             //if cd has no arguments - return error
             //if cd has more than 1 argument - return error
@@ -35,11 +58,11 @@ int exec_single_command(char *input) {
                 write_error();
                 return 0;
             }
-        } 
+        }
         else if (strcmp(tokens[0], "path") == 0) {
             return exec_path(tokens, num_tokens);
         }
-    } 
+    }
     else {
         // Not a build in command
         char exec_path[MAX_TOKEN_LENGTH];
@@ -55,6 +78,10 @@ int exec_single_command(char *input) {
             write_error();
             return 0;
         } else if (rc == 0) {
+            if (num_red_tokens == 2) {
+                close(STDOUT_FILENO);
+                open(redirection_file, O_CREAT | O_WRONLY | O_TRUNC);
+            }
             execv(exec_path, tokens); // runs command
         } else {
             // parent goes down this path (main)
@@ -75,7 +102,7 @@ int exec_parallel_commands(char *input) {
         if (rc < 0) {
             write_error();
             return 0;
-        } 
+        }
         else if (rc == 0) {
             exec_single_command(commands[i]);
             exit(0);
@@ -133,7 +160,6 @@ int get_path(char *command) {
 }
 
 /* Error Processing */
-
 void write_error(void) {
     char error_message[30] = "An error has occurred\n";
     write(STDERR_FILENO, error_message, strlen(error_message));
