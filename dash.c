@@ -130,7 +130,6 @@ int exec_single_command(char *input) {
     int num_red_tokens = get_tokens(input, ">", reds);
     char *redirection_file;
 
-    // TODO Redirect error to STDERR
     if (num_red_tokens == 0) {
         return 0;
     } else if (num_red_tokens == 1) {
@@ -211,8 +210,11 @@ int exec_single_command(char *input) {
             return 0;
         } else if (rc == 0) {
             if (num_red_tokens == 2) {
-                close(STDOUT_FILENO);
-                open(redirection_file, O_TRUNC | O_RDWR | O_CREAT, S_IRWXU);
+                // TODO: For write_error STD ERR
+                int fd = open(redirection_file, O_TRUNC | O_RDWR | O_CREAT, S_IRWXU);
+                dup2(fd, STDOUT_FILENO);
+                dup2(fd, STDERR_FILENO);
+                close(fd);
             }
             execv(exec_path, tokens); // runs command
         } else {
