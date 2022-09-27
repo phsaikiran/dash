@@ -80,6 +80,7 @@ int main(int argc, char *argv[]) {
         if (fb == NULL) {
             //Error Processing
             write_error("fb is NULL");
+            exit(0);
         }
 
         //Till End of File, Read line by line
@@ -98,6 +99,7 @@ int main(int argc, char *argv[]) {
     } else {
         //Error Processing
         write_error("argc > 2");
+        exit(0);
     }
 
     exit(0);
@@ -146,7 +148,10 @@ int exec_single_command(char *input) {
     int num_red_tokens = get_tokens(input, ">", reds);
     char *redirection_file;
 
-    if (num_red_tokens == 1) {
+    if (num_red_tokens == 0){
+        return 0;
+    }
+    else if (num_red_tokens == 1) {
         // No redirection, do nothing
     } else if (num_red_tokens == 2) {
         // Redirection is present
@@ -171,6 +176,11 @@ int exec_single_command(char *input) {
     if (strcmp(tokens[0], "cd") == 0 || strcmp(tokens[0], "exit") == 0 || strcmp(tokens[0], "path") == 0) {
         // Build in command
         if (strcmp(tokens[0], "exit") == 0) {
+            if (num_tokens != 1) {
+                write_error("exit returned error");
+                return 0;
+            }
+
             return -1;
         } else if (strcmp(tokens[0], "cd") == 0) {
             //if cd has no arguments - return error

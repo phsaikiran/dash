@@ -1,4 +1,4 @@
-cd test
+cd Testcases/test
 pwd
 ls
 uname
