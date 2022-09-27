@@ -11,7 +11,6 @@
 
 #define MAX_PATHS 100
 #define MAX_TOKENS 100
-#define MAX_TOKEN_LENGTH 1000
 
 char *PATHS[MAX_PATHS] = {"/bin"};//think about max path length
 int PATH_LENGTH = 1;
@@ -34,7 +33,6 @@ void write_error(char error[]);
 
 /* Main Function */
 int main(int argc, char *argv[]) {
-
     //Interactive Mode
     if (argc == 1) {
         //get command from user
@@ -93,15 +91,13 @@ int main(int argc, char *argv[]) {
 
 /****************************** FUNCTIONS **********************************************/
 
-/*  parse_command
-    Parses User Command
-    1. Calls exec_single_command() if user entered only 1 command
-    2. Calls exec_parallel_commands() if user entered parallel commands
-    3. Returns -1 if exit is encountered, returns 0 otherwise.
-*/
-
+/* parse_command
+ * Parses User Command
+ * 1. Calls exec_single_command() if user entered only 1 command
+ * 2. Calls exec_parallel_commands() if user entered parallel commands
+ * 3. Returns -1 if exit is encountered, returns 0 otherwise.
+ */
 int parse_command(char *command) {
-
     int is_parallel_commands = 0;
     int ret = 0;
 
@@ -120,15 +116,14 @@ int parse_command(char *command) {
     }
 
     return ret;
-
 }
 
-/*  exec_single_command
- 
- *  1. Calls get_tokens() and stores list of command and arguments in tokens
- *  2. Check if command(tokens[0]) is built-in or not
+/* exec_single_command: Executes a single command
+ * 1. Checks for any redirection. Extracts command in case of redirection
+ * 2. Calls get_tokens() and stores list of command and arguments in tokens
+ * 3. Check if command(tokens[0]) is built-in or not
+ * 4. Executes the command
 */
-
 int exec_single_command(char *input) {
     char *input_dup = strdup(input);
     char *reds[MAX_TOKENS];
@@ -203,8 +198,7 @@ int exec_single_command(char *input) {
         }
     } else {
         // Not a build in command
-        char exec_path[MAX_TOKEN_LENGTH];
-        strcpy(exec_path, tokens[0]);
+        char *exec_path = strdup(tokens[0]);
         int executable_exist = get_path(exec_path);
         if (executable_exist == -1) {
             write_error(exec_path);
@@ -230,12 +224,10 @@ int exec_single_command(char *input) {
     return 1;
 }
 
-/*  exec_parallel_commands
- 
- *  1. Calls get_tokens() and stores list of command and arguments in tokens
- *  2. Check if command(tokens[0]) is built-in or not
-*/
-
+/* exec_parallel_commands: Executes parallel commands seperated by &
+ * 1. Calls strtok_r() and gets each command seperated by &
+ * 2. Calls exec_single_command
+ */
 int exec_parallel_commands(char *input) {
     char *ref = input;
     char *command;
@@ -262,8 +254,8 @@ int exec_parallel_commands(char *input) {
 
 /*
  * get_tokens
- 1. Uses strtok_r and extracts tokens from a string sing given delimiter
- 2. Returns List of tokens
+ * 1. Uses strtok_r and extracts tokens from a string sing given delimiter
+ * 2. Returns List of tokens
  */
 int get_tokens(char *str, char *delim, char *tokens[]) {
     char *ref = str;
@@ -273,10 +265,9 @@ int get_tokens(char *str, char *delim, char *tokens[]) {
     for (int i = 0; (token = strtok_r(ref, delim, &ref)); i++) {
         if (num_tokens >= MAX_TOKENS) {
             // TODO: Fix error messages
-            printf("Max tokens reached");
+            // printf("Max tokens reached");
             break;
         }
-        tokens[i] = malloc((strlen(token) + 1) * sizeof(char));
         tokens[i] = strdup(token);
         num_tokens += 1;
     }
@@ -288,6 +279,7 @@ int get_tokens(char *str, char *delim, char *tokens[]) {
  * get_path
  * Returns string with correct path
  * eg: for command ls, will return "/bin/ls"
+ * Returns -1 of no path has the executable
  */
 int get_path(char *command) {
     for (int i = 0; i < PATH_LENGTH; i++) {
@@ -304,16 +296,16 @@ int get_path(char *command) {
 
 /* Error Processing */
 void write_error(char error[]) {
+    // Comment the printf to stop printing debug messages
     printf("%s\n", error);
     char error_message[30] = "An error has occurred\n";
     write(STDERR_FILENO, error_message, strlen(error_message));
-
 }
 /****************************** BUILT-IN COMMAND FUNCTIONS **********************************************/
 
 /*
-    Sets the path given by the user.
-*/
+ * Sets the path given by the user.
+ */
 int exec_path(char *tokens[], int num_tokens) {
     PATH_LENGTH = 0;
     for (int i = 1; i < num_tokens; i++) {
@@ -323,20 +315,16 @@ int exec_path(char *tokens[], int num_tokens) {
 }
 
 /*
-    Changes directory to path specified by the user.
-    1. Uses chdir() system call
-    2. Returns 0 if directory was changed successfully.
-    3. Returns 1 if directory was not changed successfully.
-*/
+ * Changes directory to path specified by the user.
+ * 1. Uses chdir() system call
+ * 2. Returns 0 if directory was changed successfully.
+ * 3. Returns 1 if directory was not changed successfully.
+ */
 int exec_chdir(const char *directory) {
     int cd_ret;
-
     cd_ret = chdir(directory);
-
     if (cd_ret == -1) {
         return -1;
     }
-
     return 0;
-
 }
