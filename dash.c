@@ -174,6 +174,10 @@ int exec_single_command(char *input) {
             return -1;
         } else if (strcmp(tokens[0], "cd") == 0) {
             //if cd has no arguments - return error
+            if(num_tokens != 2){
+                write_error("cd returned error");
+                return 0;
+            }
             //if cd has more than 1 argument - return error
             int cdret = exec_chdir(tokens[1]);
 
