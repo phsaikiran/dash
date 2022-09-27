@@ -29,14 +29,14 @@ int exec_single_command(char *input) {
         int num_redirection_files = get_tokens(reds[1], " ", redirection_file_tokens);
         if (num_redirection_files != 1) {
             // Multiple redirection files in an error
-            write_error();
+            write_error("Multiple redirection files in an error");
             return 0;
         }
         strcpy(input, reds[0]);
         redirection_file = strdup(redirection_file_tokens[0]);
     } else {
         // Multiple redirections is an error
-        write_error();
+        write_error("Multiple redirections is an error");
         return 0;
     }
 
@@ -54,7 +54,7 @@ int exec_single_command(char *input) {
 
             if (cdret == -1) {
                 //error processing
-                write_error();
+                write_error("cd error");
                 return 0;
             }
         } else if (strcmp(tokens[0], "path") == 0) {
@@ -66,13 +66,13 @@ int exec_single_command(char *input) {
         strcpy(exec_path, tokens[0]);
         int executable_exist = get_path(exec_path);
         if (executable_exist == -1) {
-            write_error();
+            write_error(exec_path);
             return 0;
         }
 
         int rc = fork();
         if (rc < 0) {
-            write_error();
+            write_error("rc < 0");
             return 0;
         } else if (rc == 0) {
             if (num_red_tokens == 2) {
@@ -97,7 +97,7 @@ int exec_parallel_commands(char *input) {
         // TODO: ALl forks check for error
         int rc = fork();
         if (rc < 0) {
-            write_error();
+            write_error("rc < 0");
             return 0;
         } else if (rc == 0) {
             exec_single_command(commands[i]);
@@ -156,7 +156,8 @@ int get_path(char *command) {
 }
 
 /* Error Processing */
-void write_error(void) {
+void write_error(char error[]) {
+    printf("%s\n", error);
     char error_message[30] = "An error has occurred\n";
     write(STDERR_FILENO, error_message, strlen(error_message));
 
