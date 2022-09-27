@@ -4,23 +4,17 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include <sys/types.h>
 #include <sys/wait.h>
 #include <fcntl.h>
 
 /* Declarations and Definitions */
 
 #define MAX_PATHS 100
-#define MAX_TOKENS 20
-#define MAX_PARALLEL_COMMANDS 10
-#define MAX_TOKEN_LENGTH 100
-#define MAX_LINE_LENGTH 2024
+#define MAX_TOKENS 100
+#define MAX_TOKEN_LENGTH 1000
 
 char *PATHS[MAX_PATHS] = {"/bin"};//think about max path length
 int PATH_LENGTH = 1;
-
-extern char *PATHS[MAX_PATHS];
-extern int PATH_LENGTH;
 
 int exec_path(char *tokens[], int num_tokens);
 
@@ -38,24 +32,19 @@ int get_path(char *command);
 
 void write_error(char error[]);
 
-
 /* Main Function */
 int main(int argc, char *argv[]) {
 
     //Interactive Mode
     if (argc == 1) {
-
-        //Defining the buffer
-        size_t bufsize = 1024;
-        char *buffer = (char *) malloc(bufsize * sizeof(char)); //Allocating memory for buffer
-        size_t inputlen;
-
         //get command from user
         while (1) {
+            char *buffer;
+            ssize_t buffer_length = 0;
+            size_t buffer_size = 0;
+
             printf("dash> ");
-            // TODO: Check for buffer length limit
-            inputlen = getline(&buffer, &bufsize, stdin);
-            int buffer_length = strlen(buffer);
+            buffer_length = getline(&buffer, &buffer_size, stdin);
             if (buffer[buffer_length - 1] == '\n') {
                 buffer[buffer_length - 1] = '\0';
             }
@@ -65,15 +54,12 @@ int main(int argc, char *argv[]) {
             if (pret == -1) {
                 break;
             }
-
         }
     }
         //Batch Mode
     else if (argc == 2) {
         FILE *fb;
-        char line[MAX_LINE_LENGTH];
-
-        //printf("%s", argv[1]);
+        char *line;
 
         fb = fopen(argv[1], "r"); //Open batch file in read mode
 
@@ -83,12 +69,12 @@ int main(int argc, char *argv[]) {
             exit(0);
         }
 
+        ssize_t line_length = 0;
+        size_t buffer_size = 0;
         //Till End of File, Read line by line
-        while (fgets(line, MAX_LINE_LENGTH, fb) != NULL) {//check usage of getline
-            int line_len = strlen(line);
-
-            if (line[line_len - 1] == '\n') {
-                line[line_len - 1] = '\0';
+        while ((line_length = getline(&line, &buffer_size, fb)) > 0) {
+            if (line[line_length - 1] == '\n') {
+                line[line_length - 1] = '\0';
             }
 
             int pret = parse_command(line);
@@ -149,6 +135,7 @@ int exec_single_command(char *input) {
     int num_red_tokens = get_tokens(input, ">", reds);
     char *redirection_file;
 
+    // TODO Redirect error to STDERR
     if (num_red_tokens == 0) {
         return 0;
     } else if (num_red_tokens == 1) {
@@ -220,7 +207,7 @@ int exec_single_command(char *input) {
         strcpy(exec_path, tokens[0]);
         int executable_exist = get_path(exec_path);
         if (executable_exist == -1) {
-            write_error("Executable does not exist");
+            write_error(exec_path);
             return 0;
         }
 
@@ -250,16 +237,17 @@ int exec_single_command(char *input) {
 */
 
 int exec_parallel_commands(char *input) {
-    // TODO: Check for max parallel commands length
-    char *commands[MAX_PARALLEL_COMMANDS];
-    int num_commands = get_tokens(input, "&", commands);
-    for (int i = 0; i < num_commands; i++) {
+    char *ref = input;
+    char *command;
+    int num_commands = 0;
+    for (int i = 0; (command = strtok_r(ref, "&", &ref)); i++) {
+        num_commands += 1;
         int rc = fork();
         if (rc < 0) {
             write_error("fork returned -1");
             return 0;
         } else if (rc == 0) {
-            exec_single_command(commands[i]);
+            exec_single_command(command);
             exit(0);
         }
     }
