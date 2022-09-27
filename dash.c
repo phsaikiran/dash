@@ -174,7 +174,7 @@ int exec_single_command(char *input) {
             return -1;
         } else if (strcmp(tokens[0], "cd") == 0) {
             //if cd has no arguments - return error
-            if(num_tokens != 2){
+            if (num_tokens != 2) {
                 write_error("cd returned error");
                 return 0;
             }
@@ -229,7 +229,6 @@ int exec_parallel_commands(char *input) {
     char *commands[MAX_PARALLEL_COMMANDS];
     int num_commands = get_tokens(input, "&", commands);
     for (int i = 0; i < num_commands; i++) {
-        // TODO: ALl forks check for error
         int rc = fork();
         if (rc < 0) {
             write_error("fork returned -1");
