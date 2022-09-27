@@ -1,0 +1,1093 @@
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/1.err b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/1.err
+deleted file mode 100644
+index 3f18372..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/1.err
++++ /dev/null
+@@ -1 +0,0 @@
+-An error has occurred
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/1.out b/xtratestcases/1.out
+index e69de29..3f18372 100644
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/1.out
++++ b/xtratestcases/1.out
+@@ -0,0 +1 @@
++An error has occurred
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/1.rc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/1.rc
+deleted file mode 100644
+index 573541a..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/1.rc
++++ /dev/null
+@@ -1 +0,0 @@
+-0
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/1.run b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/1.run
+deleted file mode 100644
+index a356a88..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/1.run
++++ /dev/null
+@@ -1 +0,0 @@
+-./dash INPUT_DIR/1.in
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/10.err b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/10.err
+deleted file mode 100644
+index 3f18372..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/10.err
++++ /dev/null
+@@ -1 +0,0 @@
+-An error has occurred
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/10.out b/xtratestcases/10.out
+index e69de29..3f18372 100644
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/10.out
++++ b/xtratestcases/10.out
+@@ -0,0 +1 @@
++An error has occurred
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/10.rc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/10.rc
+deleted file mode 100644
+index 573541a..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/10.rc
++++ /dev/null
+@@ -1 +0,0 @@
+-0
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/10.run b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/10.run
+deleted file mode 100644
+index 61346b6..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/10.run
++++ /dev/null
+@@ -1 +0,0 @@
+-./dash INPUT_DIR/10.in
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/11.err b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/11.err
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/11.in b/xtratestcases/11.in
+index fea4e4f..5d141e2 100644
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/11.in
++++ b/xtratestcases/11.in
+@@ -1,4 +1,4 @@
+-ls /cs4348-xv6/src/test>output11
++ls test>output11
+ cat output11
+ rm -rf output11
+ exit
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/11.rc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/11.rc
+deleted file mode 100644
+index 573541a..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/11.rc
++++ /dev/null
+@@ -1 +0,0 @@
+-0
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/11.run b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/11.run
+deleted file mode 100644
+index 6900df5..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/11.run
++++ /dev/null
+@@ -1 +0,0 @@
+-./dash INPUT_DIR/11.in
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/12.err b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/12.err
+deleted file mode 100644
+index 3f18372..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/12.err
++++ /dev/null
+@@ -1 +0,0 @@
+-An error has occurred
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/12.out b/xtratestcases/12.out
+index e69de29..3f18372 100644
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/12.out
++++ b/xtratestcases/12.out
+@@ -0,0 +1 @@
++An error has occurred
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/12.rc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/12.rc
+deleted file mode 100644
+index 573541a..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/12.rc
++++ /dev/null
+@@ -1 +0,0 @@
+-0
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/12.run b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/12.run
+deleted file mode 100644
+index 5886b99..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/12.run
++++ /dev/null
+@@ -1 +0,0 @@
+-./dash INPUT_DIR/12.in
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/13.err b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/13.err
+deleted file mode 100644
+index 3f18372..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/13.err
++++ /dev/null
+@@ -1 +0,0 @@
+-An error has occurred
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/13.out b/xtratestcases/13.out
+index e69de29..3f18372 100644
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/13.out
++++ b/xtratestcases/13.out
+@@ -0,0 +1 @@
++An error has occurred
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/13.rc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/13.rc
+deleted file mode 100644
+index d00491f..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/13.rc
++++ /dev/null
+@@ -1 +0,0 @@
+-1
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/13.run b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/13.run
+deleted file mode 100644
+index ea07d79..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/13.run
++++ /dev/null
+@@ -1 +0,0 @@
+-./dash INPUT_DIR/13.in INPUT_DIR/13.in
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/14.err b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/14.err
+deleted file mode 100644
+index 3f18372..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/14.err
++++ /dev/null
+@@ -1 +0,0 @@
+-An error has occurred
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/14.out b/xtratestcases/14.out
+index e69de29..3f18372 100644
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/14.out
++++ b/xtratestcases/14.out
+@@ -0,0 +1 @@
++An error has occurred
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/14.rc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/14.rc
+deleted file mode 100644
+index d00491f..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/14.rc
++++ /dev/null
+@@ -1 +0,0 @@
+-1
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/14.run b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/14.run
+deleted file mode 100644
+index 1b0cb4a..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/14.run
++++ /dev/null
+@@ -1 +0,0 @@
+-./dash INPUT_DIR/p2a-tests/bad
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/15.err b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/15.err
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/15.rc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/15.rc
+deleted file mode 100644
+index 573541a..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/15.rc
++++ /dev/null
+@@ -1 +0,0 @@
+-0
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/15.run b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/15.run
+deleted file mode 100644
+index 1719342..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/15.run
++++ /dev/null
+@@ -1 +0,0 @@
+-./dash INPUT_DIR/15.in
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/16.err b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/16.err
+deleted file mode 100644
+index 3f18372..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/16.err
++++ /dev/null
+@@ -1 +0,0 @@
+-An error has occurred
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/16.out b/xtratestcases/16.out
+index e69de29..3f18372 100644
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/16.out
++++ b/xtratestcases/16.out
+@@ -0,0 +1 @@
++An error has occurred
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/16.rc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/16.rc
+deleted file mode 100644
+index 573541a..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/16.rc
++++ /dev/null
+@@ -1 +0,0 @@
+-0
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/16.run b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/16.run
+deleted file mode 100644
+index dd549a7..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/16.run
++++ /dev/null
+@@ -1 +0,0 @@
+-./dash INPUT_DIR/16.in
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/17.err b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/17.err
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/17.in b/xtratestcases/17.in
+index 8f9b2d0..d1650ac 100644
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/17.in
++++ b/xtratestcases/17.in
+@@ -1,3 +1,3 @@
+-path /cs4348-xv6/src/ /bin/
+-cd /cs4348-xv6/src/test & myls  & pwd &
++path <path to P1>/P1/ /usr/bin/
++cd test & myls  & pwd &
+ exit
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/17.out b/xtratestcases/17.out
+index 6d20d93..71343a1 100644
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/17.out
++++ b/xtratestcases/17.out
+@@ -1,5 +1,6 @@
+-test1
+-test2
+-test3
+-test4
+-/cs4348-xv6/src/test
++<path to test>/test
++test1  test2  test3  test4
++
++
++
++(Order of the two lines may be swapped)
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/17.rc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/17.rc
+deleted file mode 100644
+index 573541a..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/17.rc
++++ /dev/null
+@@ -1 +0,0 @@
+-0
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/17.run b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/17.run
+deleted file mode 100644
+index f1e7571..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/17.run
++++ /dev/null
+@@ -1 +0,0 @@
+-./dash INPUT_DIR/17.in
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/18.err b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/18.err
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/18.in b/xtratestcases/18.in
+index b9ecabc..546d17b 100644
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/18.in
++++ b/xtratestcases/18.in
+@@ -1,3 +1,3 @@
+-path /cs4348-xv6/src /usr/bin
+-cd /cs4348-xv6/src/test & myls & pwd & uname
++path <path to P1>/P1/ /usr/bin
++cd test & myls & pwd & uname
+ exit
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/18.out b/xtratestcases/18.out
+index 69a1af3..86a29df 100644
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/18.out
++++ b/xtratestcases/18.out
+@@ -1,6 +1,6 @@
+-test1
+-test2
+-test3
+-test4
+-/cs4348-xv6/src/test
+ Linux
++<path to test>/test
++test1  test2  test3  test4
++
++
++(Order of lines may be swapped)
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/18.rc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/18.rc
+deleted file mode 100644
+index 573541a..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/18.rc
++++ /dev/null
+@@ -1 +0,0 @@
+-0
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/18.run b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/18.run
+deleted file mode 100644
+index ab51daa..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/18.run
++++ /dev/null
+@@ -1 +0,0 @@
+-./dash INPUT_DIR/18.in
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/19.err b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/19.err
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/19.in b/xtratestcases/19.in
+index edeaf52..4a59335 100644
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/19.in
++++ b/xtratestcases/19.in
+@@ -1,3 +1,3 @@
+-path /cs4348-xv6/src /usr/bin
+-cd /cs4348-xv6/src/test&myls&pwd& uname
++path <path to P1>/P1 /usr/bin
++cd test&myls&pwd& uname
+ exit
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/19.out b/xtratestcases/19.out
+index 69a1af3..86a29df 100644
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/19.out
++++ b/xtratestcases/19.out
+@@ -1,6 +1,6 @@
+-test1
+-test2
+-test3
+-test4
+-/cs4348-xv6/src/test
+ Linux
++<path to test>/test
++test1  test2  test3  test4
++
++
++(Order of lines may be swapped)
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/19.rc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/19.rc
+deleted file mode 100644
+index 573541a..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/19.rc
++++ /dev/null
+@@ -1 +0,0 @@
+-0
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/19.run b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/19.run
+deleted file mode 100644
+index ae43732..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/19.run
++++ /dev/null
+@@ -1 +0,0 @@
+-./dash INPUT_DIR/19.in
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/2.err b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/2.err
+deleted file mode 100644
+index 3f18372..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/2.err
++++ /dev/null
+@@ -1 +0,0 @@
+-An error has occurred
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/2.in b/xtratestcases/2.in
+index 550e83b..74dff37 100644
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/2.in
++++ b/xtratestcases/2.in
+@@ -1,2 +1,2 @@
+-cd /bad1 /bad2
++cd /media /misc
+ exit
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/2.out b/xtratestcases/2.out
+index e69de29..3f18372 100644
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/2.out
++++ b/xtratestcases/2.out
+@@ -0,0 +1 @@
++An error has occurred
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/2.rc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/2.rc
+deleted file mode 100644
+index 573541a..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/2.rc
++++ /dev/null
+@@ -1 +0,0 @@
+-0
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/2.run b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/2.run
+deleted file mode 100644
+index 46363f6..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/2.run
++++ /dev/null
+@@ -1 +0,0 @@
+-./dash INPUT_DIR/2.in
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/20.err b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/20.err
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/20.in b/xtratestcases/20.in
+index b5662a6..51835ae 100644
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/20.in
++++ b/xtratestcases/20.in
+@@ -1,5 +1,5 @@
+-path /bin /cs4348-xv6/src
+-cd /cs4348-xv6/src/test & myls > output201 & pwd > output202 & uname > output203
++path /bin <path to P1>/P1
++cd test & myls > output201 & pwd > output202 & uname > output203
+ cat output201
+ cat output202
+ cat output203
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/20.out b/xtratestcases/20.out
+index 69a1af3..72b3794 100644
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/20.out
++++ b/xtratestcases/20.out
+@@ -1,6 +1,9 @@
++output201
++output202
++output203
+ test1
+ test2
+ test3
+ test4
+-/cs4348-xv6/src/test
++<path to test>/test
+ Linux
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/20.rc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/20.rc
+deleted file mode 100644
+index 573541a..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/20.rc
++++ /dev/null
+@@ -1 +0,0 @@
+-0
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/20.run b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/20.run
+deleted file mode 100644
+index fd532ba..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/20.run
++++ /dev/null
+@@ -1 +0,0 @@
+-./dash INPUT_DIR/20.in
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/21.err b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/21.err
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/21.rc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/21.rc
+deleted file mode 100644
+index 573541a..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/21.rc
++++ /dev/null
+@@ -1 +0,0 @@
+-0
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/21.run b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/21.run
+deleted file mode 100644
+index 3312b26..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/21.run
++++ /dev/null
+@@ -1 +0,0 @@
+-./dash INPUT_DIR/21.in
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/22.err b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/22.err
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/22.in b/xtratestcases/22.in
+index 978d060..cfe0ae2 100644
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/22.in
++++ b/xtratestcases/22.in
+@@ -1,3 +1,3 @@
+-path /bin /cs4348-xv6/src
+-cd /cs4348-xv6/src/test & myhello & myls
++path /bin <path to P1>/P1
++cd test & myhello & myls
+ exit
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/22.out b/xtratestcases/22.out
+index d8ebf64..f57e85e 100644
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/22.out
++++ b/xtratestcases/22.out
+@@ -1,5 +1,2 @@
+-test1
+-test2
+-test3
+-test4
++test1  test2  test3  test4
+ hello world
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/22.rc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/22.rc
+deleted file mode 100644
+index 573541a..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/22.rc
++++ /dev/null
+@@ -1 +0,0 @@
+-0
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/22.run b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/22.run
+deleted file mode 100644
+index b63e3bf..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/22.run
++++ /dev/null
+@@ -1 +0,0 @@
+-./dash INPUT_DIR/22.in
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/23.desc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/23.desc
+deleted file mode 100644
+index 6c47d87..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/23.desc
++++ /dev/null
+@@ -1 +0,0 @@
+-See if we can execute a built-in command with no path; set multiple paths and try to execute them.
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/23.err b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/23.err
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/23.in b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/23.in
+deleted file mode 100644
+index 8238f26..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/23.in
++++ /dev/null
+@@ -1,6 +0,0 @@
+-path
+-cd /cs4348-xv6/src/test
+-path /bin /cs4348-xv6/src
+-ls
+-myls
+-exit
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/23.out b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/23.out
+deleted file mode 100644
+index cdfe68f..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/23.out
++++ /dev/null
+@@ -1,8 +0,0 @@
+-test1
+-test2
+-test3
+-test4
+-test1
+-test2
+-test3
+-test4
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/23.rc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/23.rc
+deleted file mode 100644
+index c227083..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/23.rc
++++ /dev/null
+@@ -1 +0,0 @@
+-0
+\ No newline at end of file
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/23.run b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/23.run
+deleted file mode 100644
+index 75e8fa9..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/23.run
++++ /dev/null
+@@ -1 +0,0 @@
+-./dash INPUT_DIR/23.in
+\ No newline at end of file
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/24.desc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/24.desc
+deleted file mode 100644
+index 87ebb0a..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/24.desc
++++ /dev/null
+@@ -1 +0,0 @@
+-Run commands in interactive mode.
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/24.err b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/24.err
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/24.in b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/24.in
+deleted file mode 100644
+index 14492db..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/24.in
++++ /dev/null
+@@ -1,5 +0,0 @@
+-cd /cs4348-xv6/src/test
+-pwd
+-ls
+-uname
+-exit
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/24.out b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/24.out
+deleted file mode 100644
+index ecae7f0..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/24.out
++++ /dev/null
+@@ -1,8 +0,0 @@
+-
+-dash> dash> /cs4348-xv6/src/test
+-dash> test1
+-test2
+-test3
+-test4
+-dash> Linux
+-dash> 
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/24.rc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/24.rc
+deleted file mode 100644
+index c227083..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/24.rc
++++ /dev/null
+@@ -1 +0,0 @@
+-0
+\ No newline at end of file
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/24.run b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/24.run
+deleted file mode 100644
+index 6fd42a0..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/24.run
++++ /dev/null
+@@ -1 +0,0 @@
+-./dash < INPUT_DIR/24.in
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/25.desc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/25.desc
+deleted file mode 100644
+index 11b1a83..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/25.desc
++++ /dev/null
+@@ -1 +0,0 @@
+-Call a faulty command first and then follow up with a working command.
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/25.err b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/25.err
+deleted file mode 100644
+index 3f18372..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/25.err
++++ /dev/null
+@@ -1 +0,0 @@
+-An error has occurred
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/25.in b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/25.in
+deleted file mode 100644
+index 9f36350..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/25.in
++++ /dev/null
+@@ -1,4 +0,0 @@
+-cd /cs4348-xv6
+-cd /doesntexist
+-pwd
+-exit
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/25.in~ b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/25.in~
+deleted file mode 100644
+index 21cc68b..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/25.in~
++++ /dev/null
+@@ -1,3 +0,0 @@
+-cd /cs4348-xv6
+-cd /doesntexist
+-pwd
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/25.out b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/25.out
+deleted file mode 100644
+index 151bd56..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/25.out
++++ /dev/null
+@@ -1 +0,0 @@
+-/cs4348-xv6
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/25.rc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/25.rc
+deleted file mode 100644
+index c227083..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/25.rc
++++ /dev/null
+@@ -1 +0,0 @@
+-0
+\ No newline at end of file
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/25.run b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/25.run
+deleted file mode 100644
+index db8b019..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/25.run
++++ /dev/null
+@@ -1 +0,0 @@
+-./dash INPUT_DIR/25.in
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/3.err b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/3.err
+deleted file mode 100644
+index e22d89d..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/3.err
++++ /dev/null
+@@ -1 +0,0 @@
+-ls: cannot access /u/c/s/cs537-1/tests/tests-wish/bad_ls/bad: No such file or directory
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/3.out b/xtratestcases/3.out
+index e69de29..e22d89d 100644
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/3.out
++++ b/xtratestcases/3.out
+@@ -0,0 +1 @@
++ls: cannot access /u/c/s/cs537-1/tests/tests-wish/bad_ls/bad: No such file or directory
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/3.rc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/3.rc
+deleted file mode 100644
+index 573541a..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/3.rc
++++ /dev/null
+@@ -1 +0,0 @@
+-0
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/3.run b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/3.run
+deleted file mode 100644
+index fc8c40f..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/3.run
++++ /dev/null
+@@ -1 +0,0 @@
+-./dash INPUT_DIR/3.in
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/4.err b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/4.err
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/4.in b/xtratestcases/4.in
+index b9cb74d..2487116 100644
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/4.in
++++ b/xtratestcases/4.in
+@@ -1,4 +1,4 @@
+-cd /cs4348-xv6/ta/all_tests/p1a/tests-wish_18f/p2a-test
++cd test
+ pwd
+ ls
+ uname
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/4.out b/xtratestcases/4.out
+index fec81fc..ef1499b 100644
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/4.out
++++ b/xtratestcases/4.out
+@@ -1,6 +1,3 @@
+-/cs4348-xv6/ta/all_tests/p1a/tests-wish_18f/p2a-test
+-test1
+-test2
+-test3
+-test4
+-Linux
++<path to test>/test
++test1  test2  test3  test4
++Linux 
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/4.rc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/4.rc
+deleted file mode 100644
+index 573541a..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/4.rc
++++ /dev/null
+@@ -1 +0,0 @@
+-0
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/4.run b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/4.run
+deleted file mode 100644
+index 754baa3..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/4.run
++++ /dev/null
+@@ -1 +0,0 @@
+-./dash INPUT_DIR/4.in
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/5.err b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/5.err
+deleted file mode 100644
+index 3f18372..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/5.err
++++ /dev/null
+@@ -1 +0,0 @@
+-An error has occurred
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/5.out b/xtratestcases/5.out
+index e69de29..3f18372 100644
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/5.out
++++ b/xtratestcases/5.out
+@@ -0,0 +1 @@
++An error has occurred
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/5.rc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/5.rc
+deleted file mode 100644
+index 573541a..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/5.rc
++++ /dev/null
+@@ -1 +0,0 @@
+-0
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/5.run b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/5.run
+deleted file mode 100644
+index 9188eed..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/5.run
++++ /dev/null
+@@ -1 +0,0 @@
+-./dash INPUT_DIR/5.in
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/6.err b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/6.err
+deleted file mode 100644
+index 3f18372..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/6.err
++++ /dev/null
+@@ -1 +0,0 @@
+-An error has occurred
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/6.in b/xtratestcases/6.in
+index e675779..aa1df54 100644
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/6.in
++++ b/xtratestcases/6.in
+@@ -1,3 +1,3 @@
+-cd /cs4348-xv6/src/test
++cd test
+ myls
+ exit
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/6.out b/xtratestcases/6.out
+index e69de29..3f18372 100644
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/6.out
++++ b/xtratestcases/6.out
+@@ -0,0 +1 @@
++An error has occurred
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/6.rc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/6.rc
+deleted file mode 100644
+index 573541a..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/6.rc
++++ /dev/null
+@@ -1 +0,0 @@
+-0
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/6.run b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/6.run
+deleted file mode 100644
+index 01f9f4f..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/6.run
++++ /dev/null
+@@ -1 +0,0 @@
+-./dash INPUT_DIR/6.in
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/7.desc b/xtratestcases/7.desc
+old mode 100755
+new mode 100644
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/7.err b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/7.err
+deleted file mode 100755
+index 387ae42..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/7.err
++++ /dev/null
+@@ -1,2 +0,0 @@
+-An error has occurred
+-An error has occurred
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/7.in b/xtratestcases/7.in
+old mode 100755
+new mode 100644
+index 8374872..3c4165f
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/7.in
++++ b/xtratestcases/7.in
+@@ -1,4 +1,4 @@
+-path /cs4348-xv6/src/
++path <path to P1>/P1/
+ myls
+ path
+ myls
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/7.out b/xtratestcases/7.out
+old mode 100755
+new mode 100644
+index fadbf1d..f0a36c3
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/7.out
++++ b/xtratestcases/7.out
+@@ -1,4 +1,3 @@
+-test1
+-test2
+-test3
+-test4
++test1  test2  test3  test4
++An error has occurred
++An error has occurred
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/7.rc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/7.rc
+deleted file mode 100755
+index 573541a..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/7.rc
++++ /dev/null
+@@ -1 +0,0 @@
+-0
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/7.run b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/7.run
+deleted file mode 100755
+index dc19ac3..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/7.run
++++ /dev/null
+@@ -1 +0,0 @@
+-./dash INPUT_DIR/7.in
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/8.err b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/8.err
+deleted file mode 100644
+index 3f18372..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/8.err
++++ /dev/null
+@@ -1 +0,0 @@
+-An error has occurred
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/8.out b/xtratestcases/8.out
+index e69de29..3f18372 100644
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/8.out
++++ b/xtratestcases/8.out
+@@ -0,0 +1 @@
++An error has occurred
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/8.rc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/8.rc
+deleted file mode 100644
+index 573541a..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/8.rc
++++ /dev/null
+@@ -1 +0,0 @@
+-0
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/8.run b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/8.run
+deleted file mode 100644
+index ad6be7f..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/8.run
++++ /dev/null
+@@ -1 +0,0 @@
+-./dash INPUT_DIR/8.in
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/9.err b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/9.err
+deleted file mode 100644
+index 3f18372..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/9.err
++++ /dev/null
+@@ -1 +0,0 @@
+-An error has occurred
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/9.out b/xtratestcases/9.out
+index e69de29..3f18372 100644
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/9.out
++++ b/xtratestcases/9.out
+@@ -0,0 +1 @@
++An error has occurred
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/9.rc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/9.rc
+deleted file mode 100644
+index 573541a..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/9.rc
++++ /dev/null
+@@ -1 +0,0 @@
+-0
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/9.run b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/9.run
+deleted file mode 100644
+index c2fbd01..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/9.run
++++ /dev/null
+@@ -1 +0,0 @@
+-./dash INPUT_DIR/9.in
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/14.desc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/14.desc
+deleted file mode 100644
+index 7f99b70..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/14.desc
++++ /dev/null
+@@ -1 +0,0 @@
+-Shell is invoked with a bad batch file.
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/14.err b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/14.err
+deleted file mode 100644
+index 3f18372..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/14.err
++++ /dev/null
+@@ -1 +0,0 @@
+-An error has occurred
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/14.in b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/14.in
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/14.out b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/14.out
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/14.rc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/14.rc
+deleted file mode 100644
+index d00491f..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/14.rc
++++ /dev/null
+@@ -1 +0,0 @@
+-1
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/14.run b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/14.run
+deleted file mode 100644
+index 1b0cb4a..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/14.run
++++ /dev/null
+@@ -1 +0,0 @@
+-./dash INPUT_DIR/p2a-tests/bad
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/20.desc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/20.desc
+deleted file mode 100644
+index 7a4b7d9..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/20.desc
++++ /dev/null
+@@ -1 +0,0 @@
+-Redirection and Parallel commands combined
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/20.err b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/20.err
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/20.in b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/20.in
+deleted file mode 100644
+index b5662a6..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/20.in
++++ /dev/null
+@@ -1,9 +0,0 @@
+-path /bin /cs4348-xv6/src
+-cd /cs4348-xv6/src/test & myls > output201 & pwd > output202 & uname > output203
+-cat output201
+-cat output202
+-cat output203
+-rm -rf output201
+-rm -rf output202
+-rm -rf output203
+-exit
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/20.out b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/20.out
+deleted file mode 100644
+index 69a1af3..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/20.out
++++ /dev/null
+@@ -1,6 +0,0 @@
+-test1
+-test2
+-test3
+-test4
+-/cs4348-xv6/src/test
+-Linux
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/20.rc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/20.rc
+deleted file mode 100644
+index 573541a..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/20.rc
++++ /dev/null
+@@ -1 +0,0 @@
+-0
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/20.run b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/20.run
+deleted file mode 100644
+index fd532ba..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/20.run
++++ /dev/null
+@@ -1 +0,0 @@
+-./dash INPUT_DIR/20.in
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/7.desc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/7.desc
+deleted file mode 100644
+index 3a5dabf..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/7.desc
++++ /dev/null
+@@ -1 +0,0 @@
+-Set path, run a shell script. Overwrite path and then try running the script again.
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/7.err b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/7.err
+deleted file mode 100644
+index 387ae42..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/7.err
++++ /dev/null
+@@ -1,2 +0,0 @@
+-An error has occurred
+-An error has occurred
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/7.in b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/7.in
+deleted file mode 100644
+index 8374872..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/7.in
++++ /dev/null
+@@ -1,6 +0,0 @@
+-path /cs4348-xv6/src/
+-myls
+-path
+-myls
+-ls
+-exit
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/7.out b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/7.out
+deleted file mode 100644
+index fadbf1d..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/7.out
++++ /dev/null
+@@ -1,4 +0,0 @@
+-test1
+-test2
+-test3
+-test4
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/7.rc b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/7.rc
+deleted file mode 100644
+index 573541a..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/7.rc
++++ /dev/null
+@@ -1 +0,0 @@
+-0
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/7.run b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/7.run
+deleted file mode 100644
+index dc19ac3..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/disabled_test_cases/7.run
++++ /dev/null
+@@ -1 +0,0 @@
+-./dash INPUT_DIR/7.in
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/p1.in b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/p1.in
+deleted file mode 100644
+index 2a238f8..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/p1.in
++++ /dev/null
+@@ -1,9 +0,0 @@
+-cd
+-path /cs4348-xv6/ta/all_tests/p1a/tests-wish/pathtest
+-path /cs4348-xv6/ta/all_tests/p1a/tests-wish/pathtest/
+-path.sh
+-ls
+-cd ..
+-ls
+-ls & pwd
+-exit
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/p1.sh b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/p1.sh
+deleted file mode 100755
+index 56531d7..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/p1.sh
++++ /dev/null
+@@ -1,3 +0,0 @@
+-#!/bin/bash
+-cd /cs4348-xv6/ta/all_tests/p1a/tests-wish_18f/p2a-test
+-ls
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/p2.sh b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/p2.sh
+deleted file mode 100755
+index de7a58e..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/p2.sh
++++ /dev/null
+@@ -1,4 +0,0 @@
+-#!/bin/bash
+-sleep 2
+-cd /cs4348-xv6/ta/all_tests/p1a/tests-wish_18f/p2a-test
+-pwd
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/p2a-test/test1 b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/p2a-test/test1
+deleted file mode 100755
+index e69de29..0000000
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/p2a-test/test2 b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/p2a-test/test2
+deleted file mode 100755
+index e69de29..0000000
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/p2a-test/test3 b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/p2a-test/test3
+deleted file mode 100755
+index e69de29..0000000
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/p2a-test/test4 b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/p2a-test/test4
+deleted file mode 100755
+index e69de29..0000000
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/p2a-test>output11 b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/p2a-test>output11
+deleted file mode 100644
+index 87e434e..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/p2a-test>output11
++++ /dev/null
+@@ -1 +0,0 @@
+-/u/c/s/cs537-1/tests/tests-wish/p2a-test>output11
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/p3.sh b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/p3.sh
+deleted file mode 100755
+index 6317b3c..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/p3.sh
++++ /dev/null
+@@ -1,3 +0,0 @@
+-#!/bin/bash
+-sleep 4
+-uname
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/p4.sh b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/p4.sh
+deleted file mode 100755
+index 7b330e8..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/p4.sh
++++ /dev/null
+@@ -1,2 +0,0 @@
+-#!/bin/bash
+-uname
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/p5.sh b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/p5.sh
+deleted file mode 100755
+index afb8199..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/p5.sh
++++ /dev/null
+@@ -1,4 +0,0 @@
+-#!/bin/bash
+-sleep 4
+-cd /cs4348-xv6/ta/all_tests/p1a/tests-wish_18f/p2a-test
+-ls
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/pathtest/path.sh b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/pathtest/path.sh
+deleted file mode 100755
+index c30e55d..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/pathtest/path.sh
++++ /dev/null
+@@ -1 +0,0 @@
+-echo 'path ok'
+diff --git a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/test-wish.csh b/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/test-wish.csh
+deleted file mode 120000
+index 467f4ff..0000000
+--- a/cs5348-xv6/ta/all_tests/p1a/tests-wish_21s/test-wish.csh
++++ /dev/null
+@@ -1 +0,0 @@
+-../p1a/bin/test-wish.csh
+\ No newline at end of file

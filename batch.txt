@@ -1,4 +1,5 @@
-mkdir batchtest1
+mkdir kkjh
 ls
-ls & ls -al & mkdir mybatch2
+ls & ls -al
 exit
+.
