@@ -5,10 +5,4 @@ set(CMAKE_C_STANDARD 99)
 
 include_directories(.)
 
-add_executable(dash
-        dash.c
-        parsecommand.c
-        parsecommand.h
-        builtincmd.c
-        builtincmd.h
-        )
+add_executable(dash dash.c)
