@@ -144,19 +144,32 @@ int parse_command(char *command) {
 */
 
 int exec_single_command(char *input) {
+    char *input_dup = strdup(input);
     char *reds[MAX_TOKENS];
     int num_red_tokens = get_tokens(input, ">", reds);
     char *redirection_file;
 
-    if (num_red_tokens == 0){
+    if (num_red_tokens == 0) {
         return 0;
-    }
-    else if (num_red_tokens == 1) {
+    } else if (num_red_tokens == 1) {
         // No redirection, do nothing
+        // Check if > is present. If it was present and tokens are 1, that means
+        // No file was mentioned
+        for (int i = 0; input_dup[i] != '\0'; i++) {
+            if (input_dup[i] == '>') {
+                write_error("No input file mentioned");
+                return 0;
+            }
+        }
     } else if (num_red_tokens == 2) {
         // Redirection is present
         char *redirection_file_tokens[MAX_TOKENS];
         int num_redirection_files = get_tokens(reds[1], " ", redirection_file_tokens);
+        if (num_redirection_files == 0) {
+            // Multiple redirection files in an error
+            write_error("No input file mentioned");
+            return 0;
+        }
         if (num_redirection_files != 1) {
             // Multiple redirection files in an error
             write_error("Multiple redirection files in an error");
