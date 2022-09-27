@@ -152,12 +152,11 @@ int exec_single_command(char *input) {
     if (num_red_tokens == 0) {
         return 0;
     } else if (num_red_tokens == 1) {
-        // No redirection, do nothing
         // Check if > is present. If it was present and tokens are 1, that means
-        // No file was mentioned
+        // Either no file was mentioned or no command was mentioned
         for (int i = 0; input_dup[i] != '\0'; i++) {
             if (input_dup[i] == '>') {
-                write_error("No input file mentioned");
+                write_error("No input file mentioned or no command was present");
                 return 0;
             }
         }
@@ -186,6 +185,9 @@ int exec_single_command(char *input) {
     char *tokens[MAX_TOKENS];
     int num_tokens = get_tokens(input, " ", tokens);
 
+    if (num_tokens == 0) {
+        return 0;
+    }
     if (strcmp(tokens[0], "cd") == 0 || strcmp(tokens[0], "exit") == 0 || strcmp(tokens[0], "path") == 0) {
         // Build in command
         if (strcmp(tokens[0], "exit") == 0) {
