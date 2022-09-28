@@ -245,12 +245,19 @@ int exec_parallel_commands(char *input) {
             exit(0);
         }
     }
+    //If there are no parallel commands
+    if(num_commands == 0){
+        write_error("No parallel command");
+        return 0;
+    }
 
     // Wait for all children to exit
     while (num_commands > 0) {
         wait(NULL);
         --num_commands;
     }
+
+    
     return 1;
 }
 
