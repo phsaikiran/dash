@@ -130,6 +130,7 @@ int exec_single_command(char *input) {
     int num_red_tokens = get_tokens(input, ">", reds);
     char *redirection_file;
 
+    //If there is an empty
     if (num_red_tokens == 0) {
         return 0;
     } else if (num_red_tokens == 1) {
@@ -196,13 +197,22 @@ int exec_single_command(char *input) {
             return exec_path(tokens, num_tokens);
         }
     } else {
-        // Not a build in command
+        // Not a built in command
         char *exec_path = strdup(tokens[0]);
         int executable_exist = get_path(exec_path);
         if (executable_exist == -1) {
-            write_error(exec_path);
+
+            if(num_red_tokens == 2){//If a redirection operator was given as input
+                int fd = open(redirection_file, O_TRUNC | O_RDWR | O_CREAT, S_IRWXU);
+                dup2(fd, STDERR_FILENO);
+                close(fd);
+            }
+            
+            write_error(exec_path);            
+
             return 0;
         }
+
 
         int rc = fork();
         if (rc < 0) {
