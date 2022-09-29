@@ -31,8 +31,9 @@ int get_path(char *command);
 
 void write_error(char error[]);
 
-/* Main Function */
+/********************************* MAIN *************************************************/
 int main(int argc, char *argv[]) {
+    
     //Interactive Mode
     if (argc == 1) {
         //get command from user
@@ -54,7 +55,7 @@ int main(int argc, char *argv[]) {
             }
         }
     }
-        //Batch Mode
+    //Batch Mode
     else if (argc == 2) {
         FILE *fb;
         char *line;
@@ -80,7 +81,8 @@ int main(int argc, char *argv[]) {
                 break;
             }
         }
-    } else {
+    } 
+    else {
         //Error Processing
         write_error("argc > 2");
         exit(0);
@@ -111,7 +113,8 @@ int parse_command(char *command) {
 
     if (is_parallel_commands == 0) {
         ret = exec_single_command(command); //parse user input
-    } else {
+    } 
+    else {
         ret = exec_parallel_commands(command); //parse user input
     }
 
@@ -133,7 +136,8 @@ int exec_single_command(char *input) {
     //If there is an empty
     if (num_red_tokens == 0) {
         return 0;
-    } else if (num_red_tokens == 1) {
+    } 
+    else if (num_red_tokens == 1) {
         // Check if > is present. If it was present and tokens are 1, that means
         // Either no file was mentioned or no command was mentioned
         for (int i = 0; input_dup[i] != '\0'; i++) {
@@ -142,7 +146,8 @@ int exec_single_command(char *input) {
                 return 0;
             }
         }
-    } else if (num_red_tokens == 2) {
+    } 
+    else if (num_red_tokens == 2) {
         // Redirection is present
         char *redirection_file_tokens[MAX_TOKENS];
         int num_redirection_files = get_tokens(reds[1], " ", redirection_file_tokens);
@@ -158,7 +163,8 @@ int exec_single_command(char *input) {
         }
         strcpy(input, reds[0]);
         redirection_file = strdup(redirection_file_tokens[0]);
-    } else {
+    } 
+    else {
         // Multiple redirections is an error
         write_error("Multiple redirections is an error");
         return 0;
@@ -179,7 +185,8 @@ int exec_single_command(char *input) {
             }
 
             return -1;
-        } else if (strcmp(tokens[0], "cd") == 0) {
+        } 
+        else if (strcmp(tokens[0], "cd") == 0) {
             //if cd has no arguments - return error
             if (num_tokens != 2) {
                 write_error("cd returned error");
@@ -193,10 +200,12 @@ int exec_single_command(char *input) {
                 write_error("exec_chdir returned -1");
                 return 0;
             }
-        } else if (strcmp(tokens[0], "path") == 0) {
+        } 
+        else if (strcmp(tokens[0], "path") == 0) {
             return exec_path(tokens, num_tokens);
         }
-    } else {
+    } 
+    else {
         // Not a built in command
         char *exec_path = strdup(tokens[0]);
         int executable_exist = get_path(exec_path);
@@ -218,7 +227,8 @@ int exec_single_command(char *input) {
         if (rc < 0) {
             write_error("fork returned -1");
             return 0;
-        } else if (rc == 0) {
+        } 
+        else if (rc == 0) {
             if (num_red_tokens == 2) {
                 // TODO: For write_error STD ERR
                 int fd = open(redirection_file, O_TRUNC | O_RDWR | O_CREAT, S_IRWXU);
@@ -227,7 +237,8 @@ int exec_single_command(char *input) {
                 close(fd);
             }
             execv(exec_path, tokens); // runs command
-        } else {
+        } 
+        else {
             // parent goes down this path (main)
             wait(NULL);
         }
@@ -250,7 +261,8 @@ int exec_parallel_commands(char *input) {
         if (rc < 0) {
             write_error("fork returned -1");
             return 0;
-        } else if (rc == 0) {
+        } 
+        else if (rc == 0) {
             exec_single_command(command);
             exit(0);
         }
@@ -320,6 +332,7 @@ void write_error(char error[]) {
     char error_message[30] = "An error has occurred\n";
     write(STDERR_FILENO, error_message, strlen(error_message));
 }
+
 /****************************** BUILT-IN COMMAND FUNCTIONS **********************************************/
 
 /*
