@@ -328,7 +328,7 @@ int get_path(char *command) {
 /* Error Processing */
 void write_error(char error[]) {
     // Comment the printf to stop printing debug messages
-    printf("%s\n", error);
+    // printf("%s\n", error);
     char error_message[30] = "An error has occurred\n";
     write(STDERR_FILENO, error_message, strlen(error_message));
 }
