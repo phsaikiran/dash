@@ -9,8 +9,8 @@
 
 /* Declarations and Definitions */
 
-#define MAX_PATHS 100
-#define MAX_TOKENS 100
+#define MAX_PATHS 1000
+#define MAX_TOKENS 1000
 
 char *PATHS[MAX_PATHS] = {"/bin"};//think about max path length
 int PATH_LENGTH = 1;
