@@ -29,11 +29,11 @@ int exec_parallel_commands(char *input);
 
 int get_path(char *command);
 
-void write_error(char error[]);
+void write_error(char error[], int redirection_mode, char *red_file);
 
 /********************************* MAIN *************************************************/
 int main(int argc, char *argv[]) {
-    
+
     //Interactive Mode
     if (argc == 1) {
         //get command from user
@@ -55,7 +55,7 @@ int main(int argc, char *argv[]) {
             }
         }
     }
-    //Batch Mode
+        //Batch Mode
     else if (argc == 2) {
         FILE *fb;
         char *line;
@@ -64,7 +64,7 @@ int main(int argc, char *argv[]) {
 
         if (fb == NULL) {
             //Error Processing
-            write_error("fb is NULL");
+            write_error("fb is NULL", 0, NULL);
             exit(0);
         }
 
@@ -81,10 +81,10 @@ int main(int argc, char *argv[]) {
                 break;
             }
         }
-    } 
+    }
     else {
         //Error Processing
-        write_error("argc > 2");
+        write_error("argc > 2", 0, NULL);
         exit(0);
     }
 
@@ -113,7 +113,7 @@ int parse_command(char *command) {
 
     if (is_parallel_commands == 0) {
         ret = exec_single_command(command); //parse user input
-    } 
+    }
     else {
         ret = exec_parallel_commands(command); //parse user input
     }
@@ -135,38 +135,46 @@ int exec_single_command(char *input) {
 
     //If there is an empty
     if (num_red_tokens == 0) {
+        // Check if > is present. If it was present and tokens are 0, that means
+        // Only > was entered
+        for (int i = 0; input_dup[i] != '\0'; i++) {
+            if (input_dup[i] == '>') {
+                write_error("No input file mentioned or no command was present", 0, NULL);
+                return 0;
+            }
+        }
         return 0;
-    } 
+    }
     else if (num_red_tokens == 1) {
         // Check if > is present. If it was present and tokens are 1, that means
         // Either no file was mentioned or no command was mentioned
         for (int i = 0; input_dup[i] != '\0'; i++) {
             if (input_dup[i] == '>') {
-                write_error("No input file mentioned or no command was present");
+                write_error("No input file mentioned or no command was present", 0, NULL);
                 return 0;
             }
         }
-    } 
+    }
     else if (num_red_tokens == 2) {
         // Redirection is present
         char *redirection_file_tokens[MAX_TOKENS];
         int num_redirection_files = get_tokens(reds[1], " ", redirection_file_tokens);
         if (num_redirection_files == 0) {
             // Multiple redirection files in an error
-            write_error("No input file mentioned");
+            write_error("No input file mentioned", 0, NULL);
             return 0;
         }
         if (num_redirection_files != 1) {
             // Multiple redirection files in an error
-            write_error("Multiple redirection files in an error");
+            write_error("Multiple redirection files in an error", 0, NULL);
             return 0;
         }
         strcpy(input, reds[0]);
         redirection_file = strdup(redirection_file_tokens[0]);
-    } 
+    }
     else {
         // Multiple redirections is an error
-        write_error("Multiple redirections is an error");
+        write_error("Multiple redirections is an error", 0, NULL);
         return 0;
     }
 
@@ -180,16 +188,16 @@ int exec_single_command(char *input) {
         // Build in command
         if (strcmp(tokens[0], "exit") == 0) {
             if (num_tokens != 1) {
-                write_error("exit returned error");
+                write_error("exit returned error", num_red_tokens, redirection_file);
                 return 0;
             }
 
             return -1;
-        } 
+        }
         else if (strcmp(tokens[0], "cd") == 0) {
             //if cd has no arguments - return error
             if (num_tokens != 2) {
-                write_error("cd returned error");
+                write_error("cd returned error", num_red_tokens, redirection_file);
                 return 0;
             }
             //if cd has more than 1 argument - return error
@@ -197,47 +205,38 @@ int exec_single_command(char *input) {
 
             if (cdret == -1) {
                 //error processing
-                write_error("exec_chdir returned -1");
+                write_error("exec_chdir returned -1", num_red_tokens, redirection_file);
                 return 0;
             }
-        } 
+        }
         else if (strcmp(tokens[0], "path") == 0) {
             return exec_path(tokens, num_tokens);
         }
-    } 
+    }
     else {
-        // Not a built in command
+        // Not a built-in command
         char *exec_path = strdup(tokens[0]);
         int executable_exist = get_path(exec_path);
         if (executable_exist == -1) {
-
-            if(num_red_tokens == 2){//If a redirection operator was given as input
-                int fd = open(redirection_file, O_TRUNC | O_RDWR | O_CREAT, S_IRWXU);
-                dup2(fd, STDERR_FILENO);
-                close(fd);
-            }
-            
-            write_error(exec_path);            
-
+            write_error(exec_path, num_red_tokens, redirection_file);
             return 0;
         }
 
 
         int rc = fork();
         if (rc < 0) {
-            write_error("fork returned -1");
+            write_error("fork returned -1", num_red_tokens, redirection_file);
             return 0;
-        } 
+        }
         else if (rc == 0) {
             if (num_red_tokens == 2) {
-                // TODO: For write_error STD ERR
                 int fd = open(redirection_file, O_TRUNC | O_RDWR | O_CREAT, S_IRWXU);
                 dup2(fd, STDOUT_FILENO);
                 dup2(fd, STDERR_FILENO);
                 close(fd);
             }
             execv(exec_path, tokens); // runs command
-        } 
+        }
         else {
             // parent goes down this path (main)
             wait(NULL);
@@ -259,17 +258,17 @@ int exec_parallel_commands(char *input) {
         num_commands += 1;
         int rc = fork();
         if (rc < 0) {
-            write_error("fork returned -1");
+            write_error("fork returned -1", 0, NULL);
             return 0;
-        } 
+        }
         else if (rc == 0) {
             exec_single_command(command);
             exit(0);
         }
     }
     //If there are no parallel commands
-    if(num_commands == 0){
-        write_error("No parallel command");
+    if (num_commands == 0) {
+        write_error("No parallel command", 0, NULL);
         return 0;
     }
 
@@ -279,7 +278,7 @@ int exec_parallel_commands(char *input) {
         --num_commands;
     }
 
-    
+
     return 1;
 }
 
@@ -326,11 +325,22 @@ int get_path(char *command) {
 }
 
 /* Error Processing */
-void write_error(char error[]) {
+void write_error(char error[], int redirection_mode, char *red_file) {
     // Comment the printf to stop printing debug messages
     // printf("%s\n", error);
     char error_message[30] = "An error has occurred\n";
+    int temp_stderr_file_no;
+    if (redirection_mode == 2) {
+        temp_stderr_file_no = dup(STDERR_FILENO);
+        int fd = open(red_file, O_TRUNC | O_RDWR | O_CREAT, S_IRWXU);
+        dup2(fd, STDERR_FILENO);
+        close(fd);
+    }
     write(STDERR_FILENO, error_message, strlen(error_message));
+    if (redirection_mode == 2) {
+        dup2(temp_stderr_file_no, STDERR_FILENO);
+        close(temp_stderr_file_no);
+    }
 }
 
 /****************************** BUILT-IN COMMAND FUNCTIONS **********************************************/
