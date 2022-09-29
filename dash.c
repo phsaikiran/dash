@@ -102,9 +102,10 @@ int main(int argc, char *argv[]) {
 int parse_command(char *command) {
     int is_parallel_commands = 0;
     int ret = 0;
+    int i;
 
     // Check for '&' in the buffer for parallel commands
-    for (int i = 0; command[i] != '\0'; i++) {
+    for (i = 0; command[i] != '\0'; i++) {
         if (command[i] == '&') {
             is_parallel_commands = 1;
             break;
@@ -132,12 +133,13 @@ int exec_single_command(char *input) {
     char *reds[MAX_TOKENS];
     int num_red_tokens = get_tokens(input, ">", reds);
     char *redirection_file;
+    int i;
 
     //If there is an empty
     if (num_red_tokens == 0) {
         // Check if > is present. If it was present and tokens are 0, that means
         // Only > was entered
-        for (int i = 0; input_dup[i] != '\0'; i++) {
+        for (i = 0; input_dup[i] != '\0'; i++) {
             if (input_dup[i] == '>') {
                 write_error("No input file mentioned or no command was present", 0, NULL);
                 return 0;
@@ -148,7 +150,7 @@ int exec_single_command(char *input) {
     else if (num_red_tokens == 1) {
         // Check if > is present. If it was present and tokens are 1, that means
         // Either no file was mentioned or no command was mentioned
-        for (int i = 0; input_dup[i] != '\0'; i++) {
+        for (i = 0; input_dup[i] != '\0'; i++) {
             if (input_dup[i] == '>') {
                 write_error("No input file mentioned or no command was present", 0, NULL);
                 return 0;
@@ -212,8 +214,7 @@ int exec_single_command(char *input) {
         else if (strcmp(tokens[0], "path") == 0) {
             return exec_path(tokens, num_tokens);
         }
-    }
-    else {
+    } else {
         // Not a built-in command
         char *exec_path = strdup(tokens[0]);
         int executable_exist = get_path(exec_path);
@@ -254,7 +255,9 @@ int exec_parallel_commands(char *input) {
     char *ref = input;
     char *command;
     int num_commands = 0;
-    for (int i = 0; (command = strtok_r(ref, "&", &ref)); i++) {
+    int i;
+
+    for (i = 0; (command = strtok_r(ref, "&", &ref)); i++) {
         num_commands += 1;
         int rc = fork();
         if (rc < 0) {
@@ -291,11 +294,10 @@ int get_tokens(char *str, char *delim, char *tokens[]) {
     char *ref = str;
     char *token;
     int num_tokens = 0;
+    int i;
 
-    for (int i = 0; (token = strtok_r(ref, delim, &ref)); i++) {
+    for (i = 0; (token = strtok_r(ref, delim, &ref)); i++) {
         if (num_tokens >= MAX_TOKENS) {
-            // TODO: Fix error messages
-            // printf("Max tokens reached");
             break;
         }
         tokens[i] = strdup(token);
@@ -312,7 +314,8 @@ int get_tokens(char *str, char *delim, char *tokens[]) {
  * Returns -1 of no path has the executable
  */
 int get_path(char *command) {
-    for (int i = 0; i < PATH_LENGTH; i++) {
+    int i;
+    for (i = 0; i < PATH_LENGTH; i++) {
         char *path = strdup(PATHS[i]);
         strcat(path, "/");
         strcat(path, command);
@@ -336,7 +339,10 @@ void write_error(char error[], int redirection_mode, char *red_file) {
         dup2(fd, STDERR_FILENO);
         close(fd);
     }
-    write(STDERR_FILENO, error_message, strlen(error_message));
+    long ret = write(STDERR_FILENO, error_message, strlen(error_message));
+    if (ret == -1) {
+        printf("%s", error_message);
+    }
     if (redirection_mode == 2) {
         dup2(temp_stderr_file_no, STDERR_FILENO);
         close(temp_stderr_file_no);
@@ -350,7 +356,8 @@ void write_error(char error[], int redirection_mode, char *red_file) {
  */
 int exec_path(char *tokens[], int num_tokens) {
     PATH_LENGTH = 0;
-    for (int i = 1; i < num_tokens; i++) {
+    int i;
+    for (i = 1; i < num_tokens; i++) {
         PATHS[PATH_LENGTH++] = tokens[i];
     }
     return 1;
